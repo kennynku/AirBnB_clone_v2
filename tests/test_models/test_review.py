@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+""" Module of test cases for reviews """
 import os
 
 from tests.test_models.test_base_model import TestBasemodel
@@ -7,15 +7,15 @@ from models.review import Review
 
 
 class TestReview(TestBasemodel):
-    """Represents the tests for the Review model."""
+    """Test class Review"""
     def __init__(self, *args, **kwargs):
-        """Initializes the test class."""
+        """Starts test class"""
         super().__init__(*args, **kwargs)
         self.name = "Review"
         self.value = Review
 
     def test_place_id(self):
-        """Tests the type of place_id."""
+        """user_id type check"""
         new = self.value()
         self.assertEqual(
             type(new.place_id),
@@ -23,7 +23,7 @@ class TestReview(TestBasemodel):
         )
 
     def test_user_id(self):
-        """Tests the type of user_id."""
+        """user_id type check"""
         new = self.value()
         self.assertEqual(
             type(new.user_id),
@@ -31,7 +31,7 @@ class TestReview(TestBasemodel):
         )
 
     def test_text(self):
-        """Tests the type of text."""
+        """Text typeof check"""
         new = self.value()
         self.assertEqual(
             type(new.text),

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+""" Module for city tests """
 import os
 
 from models.city import City
@@ -7,15 +7,15 @@ from tests.test_models.test_base_model import TestBasemodel
 
 
 class TestCity(TestBasemodel):
-    """Represents the tests for the City model."""
+    """tests class for city objects"""
     def __init__(self, *args, **kwargs):
-        """Initializes the test class."""
+        """Starts test"""
         super().__init__(*args, **kwargs)
         self.name = "City"
         self.value = City
 
     def test_state_id(self):
-        """Tests the type of state_id."""
+        """Type check for id."""
         new = self.value()
         self.assertEqual(
             type(new.state_id),
@@ -23,7 +23,7 @@ class TestCity(TestBasemodel):
         )
 
     def test_name(self):
-        """Tests the type of name."""
+        """type check for name"""
         new = self.value()
         self.assertEqual(
             type(new.name),

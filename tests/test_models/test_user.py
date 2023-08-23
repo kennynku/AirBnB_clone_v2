@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+""" user module for test cases """
 import os
 from sqlalchemy import Column
 
@@ -8,15 +8,15 @@ from models.user import User
 
 
 class TestUser(TestBasemodel):
-    """Represents the tests for the User model."""
+    """Test class for Users"""
     def __init__(self, *args, **kwargs):
-        """Initializes the test class."""
+        """Sarts user test instance"""
         super().__init__(*args, **kwargs)
         self.name = "User"
         self.value = User
 
     def test_first_name(self):
-        """Tests the type of first_name."""
+        """first_name type check"""
         new = self.value()
         self.assertEqual(
             type(new.first_name),
@@ -24,7 +24,7 @@ class TestUser(TestBasemodel):
         )
 
     def test_last_name(self):
-        """Tests the type of last_name."""
+        """Last name type check"""
         new = self.value()
         self.assertEqual(
             type(new.last_name),
@@ -32,7 +32,7 @@ class TestUser(TestBasemodel):
         )
 
     def test_email(self):
-        """Tests the type of email."""
+        """amail validation"""
         new = self.value()
         self.assertEqual(
             type(new.email),
@@ -40,7 +40,7 @@ class TestUser(TestBasemodel):
         )
 
     def test_password(self):
-        """Tests the type of password."""
+        """password type validation."""
         new = self.value()
         self.assertEqual(
             type(new.password),
