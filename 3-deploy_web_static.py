@@ -11,7 +11,7 @@ env.hosts = ["35.168.2.196", "34.224.94.141"]
 
 
 def do_pack():
-    """Create a tar gzipped archive of web_static."""
+    """Create an archive of the directory web_static."""
     dt = datetime.utcnow()
     file = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
                                                          dt.month,
@@ -28,7 +28,7 @@ def do_pack():
 
 
 def do_deploy(archive_path):
-    """Distributes  archive to a web server.
+    """Distributes an archive to a web server.
     """
     if os.path.isfile(archive_path) is False:
         return False
@@ -63,7 +63,7 @@ def do_deploy(archive_path):
 
 
 def deploy():
-    """Create and distribute  archive to a web server."""
+    """Create and distributes archives to a web server."""
     file = do_pack()
     if file is None:
         return False
